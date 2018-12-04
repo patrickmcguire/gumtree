@@ -18,6 +18,7 @@ dependencies {
 	compile project(':gen.antlr3-php')
 	compile project(':gen.antlr3-r')
 	compile project(':gen.antlr3-xml')
+	compile project(':gen.antlr3-liquid')
 	compile project(':gen.c')
 	compile project(':gen.css')
 	compile project(':gen.javaparser')

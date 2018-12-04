@@ -59,11 +59,18 @@ configure(subprojects.findAll { it.name.startsWith('gen.antlr3') }) {
         antlr 'org.antlr:antlr:3.5.2'
     }
 
-    if (it.name.startsWith('gen.antlr3-')) {
-        dependencies {
-            compile project(':gen.antlr3')
-        }
-    }
+	if (it.name.startsWith('gen.antlr3-')) {
+		if (it.name == 'gen.antlr3-liquid') {
+			dependencies {
+				compile project(':gen.antlr3')
+				compile group: 'nl.big-o', name: 'liqp', version: '0.7.3'
+			}
+		} else {
+			dependencies {
+				compile project(':gen.antlr3')
+			}
+		}
+	}
 }
 
 configure(subprojects.findAll { it.name.startsWith('gen.antlr4') }) {
