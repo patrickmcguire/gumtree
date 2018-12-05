@@ -26,7 +26,7 @@ RUN ln -s /opt/pythonparser/pythonparser /usr/bin/pythonparser
 
 # install gumtree
 WORKDIR /opt
-RUN git clone -b develop https://github.com/GumTreeDiff/gumtree.git --depth 1
+ADD . /opt/gumtree
 WORKDIR /opt/gumtree
 RUN ./gradlew build -x check \
 	&& unzip dist/build/distributions/gumtree.zip \

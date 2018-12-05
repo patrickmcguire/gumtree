@@ -42,7 +42,7 @@ public class LiquidTreeGenerator extends AbstractAntlr3TreeGenerator<LiquidLexer
 
     @Override
     protected RuleReturnScope getStartRule(LiquidParser parser) throws RecognitionException {
-        return parser.block();
+        return parser.parse();
     }
 
     @Override
